@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>תמיכה טכנית - בעיות מעקב</title>
+    <title>תמיכה טכנית - בעיות עדיפויות</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,23 +12,27 @@
             <div class="logo-container">
                 <img id="logoImage" src="media/logo.jpg" alt="Logo" />
             </div>
-            <h1>בעיות גרירה ושיבוץ משימה תקינה</h1>
-            <p>פתרונות לבעיות שיבוץ הזמנה</p>
+            <h1>חוסר תאימת נתונים מהפריורטי</h1>
+            <p>פתרון לבעיות הצגה ועדכון נתונים</p>
         </div>
 
         <div class="support-content">
             <div class="problem-section">
                 <div class="problem-cards">
                     <div class="problem-card">
-                        <span class="problem-icon">❓</span>
-                        <h3>לא ניתן לשבץ הזמנה</h3>
-                        <p>הזמנה תקינה אך לא ניתן לגרור ולשבץ</p>
+                        <span class="problem-icon">⭐</span>
+                        <h3>עדיפות לא נמצאת</h3>
+                        <p>המערכת לא מזהה את העדיפות שהוזנה</p>
                     </div>
-                    
+                    <div class="problem-card">
+                        <span class="problem-icon">⚡</span>
+                        <h3>עדיפות לא מדויקת</h3>
+                        <p>העדיפות קיימת אבל לא מדויקת לזמן</p>
+                    </div>
                     <div class="problem-card">
                         <span class="problem-icon">🔄</span>
-                        <h3>צריך עדכון הזמנה</h3>
-                        <p>עדכון פרטי ההזמנה</p>
+                        <h3>צריך עדכון עדיפות</h3>
+                        <p>העדיפות השתנתה וצריכה עדכון במערכת</p>
                     </div>
                 </div>
             </div>
@@ -39,53 +43,26 @@
                     <div class="slide active">
                         <div class="slide-content">
                             <div class="slide-image">
-                                <img src=""/>
+                                <img src="media/Priority.png"/>
 
                             </div>
                             <div class="slide-text">
-                                <img src="media/order.png"  />
-                                <h3>לא ניתן לשבץ או לגרור הזמנה</h3>
-                                <p>שימו לב שאין שום שגיאה על ההזמנה</p>
+                                <h3>המידע שנמשך מהפריורטי לא תקין</h3>
+                                <p>שימו לב לנתונים שמתקבלים מהפריוטרי :
+                                    <p>1. פרטי ההלקוח</p>
+                                    <p>2. עדיפות</p>
+                                    <p>3. פרטי ההזמנה והמוצרים</p>
+                                    <p> במידה ויש חוסר תיאום בנתונים זה נובע מכך שעשו שינוי בנתוני הלקוח אחרי שבוצעה סנכרון, אחרי סנכרון נוסף המידע העדכני יתקבל</p>
+
+                                </p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="slide">
-                        <div class="slide-content">
-                            <div class="slide-image ">
-                                <img src="media/order2.png"  />
-                            </div>
-                            <div class="slide-text">
-                                <h3>Getruck פתיחת ההזמנה במערכת </h3>
-                                <p>שימו לב שכל ההזמנות מופיעות בצבע אפור - משמעות שהן הוסרות מהמשימה ולכן לא ניתן לשבץ אותה ריקה בשום מסלול</p>
-                            </div>
-                        </div>
-                    </div>
+                   
                     
-                    <div class="slide">
-                        <div class="slide-content">
-                            <div class="slide-image">
-                                <img src="media/order3.png" alt="עדכון במערכת" />
-                            </div>
-                            <div class="slide-text">
-                                <h3>החזרת פירוט מהזמנות למשימה</h3>
-                                <p>נא לסמן את כל הפריטים וללחוץ על הוספת למשימה</p>
-                            </div>
-                        </div>
-                    </div>
+                   
                     
-                    <div class="slide">
-                        <div class="slide-content">
-                            <div class="slide-image">
-                                <img src="media/order5.png" alt="מעקב תקין" />
-  
-                            </div>
-                            <div class="slide-text">
-                                <h3>שיבוץ הזמנה באופן תקין למסלול</h3>
-                                <p>בדיקת המעקב ושיבוץ על מסלול בהצלחה</p>
-                            </div>
-                        </div>
-                    </div>
                     
                     <div class="slide completion-slide">
                         <div class="slide-content">
@@ -106,9 +83,7 @@
                         </button>
                         <div class="slide-dots">
                             <span class="dot active" onclick="currentSlide(1)"></span>
-                            <span class="dot" onclick="currentSlide(2)"></span>
-                            <span class="dot" onclick="currentSlide(3)"></span>
-                            <span class="dot" onclick="currentSlide(4)"></span>
+
                         </div>
                         <button class="nav-btn next-btn" onclick="changeSlide(1)">
                             <span>הבא</span>
@@ -132,7 +107,7 @@
 
     <script>
         let slideIndex = 1;
-        const totalSlides = 4;
+        const totalSlides = 1; // שינוי ל-1 כי יש רק שלב אחד
 
         function changeSlide(n) {
             showSlide(slideIndex += n);
@@ -178,7 +153,7 @@
             const dots = document.getElementsByClassName('dot');
             
             if (n > totalSlides) {
-                slideIndex = 5; // Show completion slide
+                slideIndex = 2; // Show completion slide (שינוי מ-5 ל-2)
             }
             if (n < 1) {
                 slideIndex = 1;
