@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תמיכה טכנית - כתובת לא תקינה</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img id="logoImage" src="logo.jpg" alt="Logo" />
+            </div>
+            <h1>כתובת לא תקינה</h1>
+            <p>פתרונות לבעיות כתובת ועדכון נתונים</p>
+        </div>
+
+        <div class="support-content">
+            <div class="problem-section">
+                <div class="problem-cards">
+                    <div class="problem-card">
+                        <span class="problem-icon">📍</span>
+                        <h3>כתובת לא נמצאת במערכת</h3>
+                        <p>המערכת לא מזהה את הכתובת שהוזנה</p>
+                    </div>
+                    <div class="problem-card">
+                        <span class="problem-icon">🗺️</span>
+                        <h3>כתובת לא מדויקת</h3>
+                        <p>הכתובת קיימת אבל לא מדויקת למיקום</p>
+                    </div>
+                    <div class="problem-card">
+                        <span class="problem-icon">🔄</span>
+                        <h3>צריך עדכון כתובת</h3>
+                        <p>הכתובת השתנתה וצריכה עדכון במערכת</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slideshow-section">
+                <h2>מדריך שלב אחר שלב</h2>
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="address.png"/>
+
+                            </div>
+                            <div class="slide-text">
+                                <p>שימו לב לשגיאה של המשימה</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-image ">
+                                <img src="address2.png" style="width: 250px !important; height: 250px !important;"  />
+                            </div>
+                            <div class="slide-text">
+                                <h3>חיפוש במפות</h3>
+                                <p>השתמש ב-Google Maps או Waze לאימות הכתובת. וודא שהמיקום מדויק ונגיש לרכב משלוחים.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://via.placeholder.com/150x150/0277bd/ffffff?text=🔄" alt="עדכון במערכת" />
+                                <span class="slide-icon">🔄</span>
+                            </div>
+                            <div class="slide-text">
+                                <h3>עדכון במערכת</h3>
+                                <p>הכנס את הכתובת המתוקנת או פנה לתמיכה. וודא שהמידע נשמר בהצלחה במערכת.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://via.placeholder.com/150x150/4caf50/ffffff?text=✅" alt="אימות סופי" />
+                                <span class="slide-icon">✅</span>
+                            </div>
+                            <div class="slide-text">
+                                <h3>אימות סופי</h3>
+                                <p>בדוק שהמשימה עודכנה עם הכתובת החדשה ושהנהג קיבל התראה על השינוי.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide completion-slide">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <span class="slide-icon">🎉</span>
+                            </div>
+                            <div class="slide-text">
+                                <h3>הסתיים בהצלחה!</h3>
+                                <p>המדריך הושלם. אם עדיין נתקלת בבעיות, פנה אלינו בפרטים הבאים:</p>
+                                <div class="completion-contact">
+                                    <p><strong>טלפון:</strong> 03-1234567</p>
+                                    <p><strong>מייל:</strong> support@getruck.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">
+                            <span>הקודם</span>
+                        </button>
+                        <div class="slide-dots">
+                            <span class="dot active" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                        </div>
+                        <button class="nav-btn next-btn" onclick="changeSlide(1)">
+                            <span>הבא</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-section">
+            <a href="index.html" class="back-button">
+                <span>←</span>
+                חזרה לדף הראשי
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>הדור הבא של ההפצה היבשתית בישראל.</p>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        const totalSlides = 4;
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function updateButtons() {
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            
+            // Update previous button
+            if (slideIndex === 1) {
+                prevBtn.innerHTML = '<span>קודם</span>';
+                prevBtn.style.opacity = '0.5';
+                prevBtn.style.cursor = 'not-allowed';
+            } else {
+                prevBtn.innerHTML = '<span>קודם</span>';
+                prevBtn.style.opacity = '1';
+                prevBtn.style.cursor = 'pointer';
+            }
+            
+            // Update next button
+            if (slideIndex === totalSlides) {
+                nextBtn.innerHTML = '<span>סיום</span>';
+                nextBtn.style.opacity = '1';
+                nextBtn.style.cursor = 'pointer';
+            } else if (slideIndex >= totalSlides + 1) {
+                nextBtn.innerHTML = '<span>הבא</span>';
+                nextBtn.style.opacity = '0.5';
+                nextBtn.style.cursor = 'not-allowed';
+            } else {
+                nextBtn.innerHTML = '<span>הבא</span>';
+                nextBtn.style.opacity = '1';
+                nextBtn.style.cursor = 'pointer';
+            }
+        }
+
+        function showSlide(n) {
+            const slides = document.getElementsByClassName('slide');
+            const dots = document.getElementsByClassName('dot');
+            
+            if (n > totalSlides) {
+                slideIndex = 5; // Show completion slide
+            }
+            if (n < 1) {
+                slideIndex = 1;
+            }
+            
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            
+            // Remove active class from all dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+            
+            // Show current slide
+            if (slideIndex <= totalSlides) {
+                slides[slideIndex - 1].classList.add('active');
+                dots[slideIndex - 1].classList.add('active');
+            } else {
+                // Show completion slide
+                slides[slides.length - 1].classList.add('active');
+            }
+            
+            // Update navigation buttons
+            updateButtons();
+        }
+
+        // Initialize slideshow
+        document.addEventListener('DOMContentLoaded', function() {
+            showSlide(slideIndex);
+        });
+    </script>
+</body>
+</html>
