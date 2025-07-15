@@ -353,9 +353,10 @@ body {
 }
 
 .slide-image img {
-     width: 450px;
-    height: 200px;
-    object-fit: cover;
+    width: 100%;
+    max-width: 2000px;
+    height: auto;
+    object-fit: contain;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 2px solid rgba(3, 169, 244, 0.2);

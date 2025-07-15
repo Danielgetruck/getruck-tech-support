@@ -3,6 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>תמיכה טכנית - דף ראשי</title>
-        <link rel="stylesheet" href="style.css">
+    <title>תמיכה טכנית - בעיות מעקב</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img id="logoImage" src="media/logo.jpg" alt="Logo" />
+            </div>
+            <h1>בעיות מעקב</h1>
+            <p>פתרונות לבעיות מעקב ועדכון נתונים</p>
+        </div>
+
+        <div class="support-content">
+            <div class="problem-section">
+                <div class="problem-cards">
+                    <div class="problem-card">
+                        <span class="problem-icon">📍</span>
+                        <h3>מעקב לא נמצאת</h3>
+                        <p>המערכת לא מזהה את המעקב שהוזן</p>
+                    </div>
+                    <div class="problem-card">
+                        <span class="problem-icon">📱</span>
+                        <h3>מעקב לא מדויק</h3>
+                        <p>המעקב קיים אבל לא מדויק למיקום</p>
+                    </div>
+                    <div class="problem-card">
+                        <span class="problem-icon">🔄</span>
+                        <h3>צריך עדכון מעקב</h3>
+                        <p>המעקב השתנה וצריך עדכון במערכת</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slideshow-section">
+                <h2>מדריך שלב אחר שלב</h2>
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="media/address.png"/>
+
+                            </div>
+                            <div class="slide-text">
+                                <h3>מעקב לא תקין</h3>
+                                <p>שימו לב לשגיאה של המעקב</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-image ">
+                                <img src="media/address2.png"  />
+                            </div>
+                            <div class="slide-text">
+                                <h3>חיפוש במערכת</h3>
+                                <p>השתמש במערכת החיפוש לאימות המעקב. וודא שהפרטים מדויקים.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="media/address3.png" alt="עדכון במערכת" />
+                            </div>
+                            <div class="slide-text">
+                                <h3>עדכון במערכת</h3>
+                                <p>הכנס את פרטי המעקב המדויקים ותבחר בעזרת העכבר על האפשרות שמופיעה ואז לחץ על שמור.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="media/address4.png" alt="מעקב תקין" />
+  
+                            </div>
+                            <div class="slide-text">
+                                <h3>עדכון המעקב</h3>
+                                <p>בדיקת המעקב ושיבוץ על מסלול בהצלחה</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide completion-slide">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <span class="slide-icon">🎉</span>
+                            </div>
+                            <div class="slide-text">
+                                <h3>הסתיים בהצלחה!</h3>
+                                <p>במידה והתקלה לא טופלה נא לפנות דרך הוואטסאפ הקבוצתי</p>
+                            
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">
+                            <span>הקודם</span>
+                        </button>
+                        <div class="slide-dots">
+                            <span class="dot active" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                        </div>
+                        <button class="nav-btn next-btn" onclick="changeSlide(1)">
+                            <span>הבא</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-section">
+            <a href="index.html" class="back-button">
+                <span></span>
+                חזרה לדף הראשי
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>הדור הבא של ההפצה היבשתית בישראל.</p>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        const totalSlides = 4;
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function updateButtons() {
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            
+            // Update previous button
+            if (slideIndex === 1) {
+                prevBtn.innerHTML = '<span>קודם</span>';
+                prevBtn.style.opacity = '0.5';
+                prevBtn.style.cursor = 'not-allowed';
+            } else {
+                prevBtn.innerHTML = '<span>קודם</span>';
+                prevBtn.style.opacity = '1';
+                prevBtn.style.cursor = 'pointer';
+            }
+            
+            // Update next button
+            if (slideIndex === totalSlides) {
+                nextBtn.innerHTML = '<span>סיום</span>';
+                nextBtn.style.opacity = '1';
+                nextBtn.style.cursor = 'pointer';
+            } else if (slideIndex >= totalSlides + 1) {
+                nextBtn.innerHTML = '<span>הבא</span>';
+                nextBtn.style.opacity = '0.5';
+                nextBtn.style.cursor = 'not-allowed';
+            } else {
+                nextBtn.innerHTML = '<span>הבא</span>';
+                nextBtn.style.opacity = '1';
+                nextBtn.style.cursor = 'pointer';
+            }
+        }
+
+        function showSlide(n) {
+            const slides = document.getElementsByClassName('slide');
+            const dots = document.getElementsByClassName('dot');
+            
+            if (n > totalSlides) {
+                slideIndex = 5; // Show completion slide
+            }
+            if (n < 1) {
+                slideIndex = 1;
+            }
+            
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            
+            // Remove active class from all dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+            
+            // Show current slide
+            if (slideIndex <= totalSlides) {
+                slides[slideIndex - 1].classList.add('active');
+                dots[slideIndex - 1].classList.add('active');
+            } else {
+                // Show completion slide
+                slides[slides.length - 1].classList.add('active');
+            }
+            
+            // Update navigation buttons
+            updateButtons();
+        }
+
+        // Initialize slideshow
+        document.addEventListener('DOMContentLoaded', function() {
+            showSlide(slideIndex);
+        });
+    </script>
+</body>
+</html>
